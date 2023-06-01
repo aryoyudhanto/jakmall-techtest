@@ -231,7 +231,9 @@ const Payment = () => {
                   {shipEst} by {shipMet}
                 </p>
               </>
-            ) : null}
+            ) : <p className="text-sm text-red-500">
+            Choose shipping method
+          </p>}
           </div>
           <div className="flex justify-between px-5">
             <p className="text-sm font-normal">Cost of goods</p>
@@ -261,6 +263,7 @@ const Payment = () => {
           </div>
           <div className="flex justify-center px-5">
             <button
+            disabled={shipMet&&pay? false : true}
               className="btn bg-[#FF8A00] w-full border-none hover:bg-orange-600 hover:scale-95 normal-case text-lg"
               onClick={() => navigate("/payment+success")}
             >
