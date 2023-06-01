@@ -15,36 +15,36 @@ const Layout: FC<LayoutProps> = ({ children, number1, number2, number3 }) => {
     <div className="relative">
       <div className="z-0 w-full h-screen flex flex-col overflow-auto bg-[#FFFAE6]">
         <div className="h-screen overflow-auto">
-          <div className="absolute top-10 flex justify-center z-10 w-full">
-            <div className="flex bg-[#FFFAE6] rounded-2xl h-12 w-1/4 items-center justify-center">
-              <div className={`font-bold ${number1} w-6 h-6 rounded-full flex justify-center items-center mr-2`}>
-                <RiNumber1 size={13} />
+          <div className="absolute top-3 md:top-10 flex justify-center z-10 w-full">
+            <div className="flex bg-[#FFFAE6] rounded-2xl h-12 w-2/3 md:w-1/4 items-center justify-center p-1" >
+              <div className={`font-bold ${number1} w-5 h-5 md:w-6 md:h-6 rounded-full flex justify-center items-center mr-1 md:mr-2 text-xs md:text-sm`}>
+                <RiNumber1 />
               </div>
               <Link to={"/"}>
-                <p className="text-[#FF8A00] capitalize hover:scale-105 transition">delivery</p>
+                <p className="text-[#FF8A00] capitalize hover:scale-105 transition text-xs md:text-base">delivery</p>
               </Link>
-              <div className="text-[#FF8A00] mx-2">
-                <AiOutlineRight size={12} />
+              <div className="text-[#FF8A00] mx-1 md:mx-2 text-xs md:text-sm">
+                <AiOutlineRight/>
               </div>
-              <div className={`font-bold ${number2} w-6 h-6 rounded-full flex justify-center items-center mr-2`}>
-                <RiNumber2 size={13} />
+              <div className={`font-bold ${number2} w-5 h-5 md:w-6 md:h-6 rounded-full flex justify-center items-center mr-1 md:mr-2 text-xs md:text-sm`}>
+                <RiNumber2/>
               </div>
               <Link to={"/"}>
-                <p className="text-[#FF8A00] capitalize hover:scale-105 transition">payment</p>
+                <p className="text-[#FF8A00] capitalize hover:scale-105 transition text-xs md:text-base">payment</p>
               </Link>
-              <div className="text-[#FF8A00] mx-2">
-                <AiOutlineRight size={12} />
+              <div className="text-[#FF8A00] mx-1 md:mx-2 text-xs md:text-sm">
+                <AiOutlineRight />
               </div>
-              <div className={`font-bold ${number3} w-6 h-6 rounded-full flex justify-center items-center mr-2`}>
-                <RiNumber3 size={13} />
+              <div className={`font-bold ${number3} w-5 h-5 md:w-6 md:h-6 rounded-full flex justify-center items-center mr-1 md:mr-2 text-xs md:text-sm`}>
+                <RiNumber3  />
               </div>{" "}
               <Link to={"/"}>
-                <p className="text-[#FF8A00] capitalize hover:scale-105 transition">finish</p>
+                <p className="text-[#FF8A00] capitalize hover:scale-105 transition text-xs md:text-base">finish</p>
               </Link>
             </div>
           </div>
           <div className="absolute w-screen h-full">
-            <div className="bg-white my-14 mx-20 rounded-2xl p-7">{children}</div>
+            <div className="bg-white my-7 mx-5 md:my-14 md:mx-20 rounded-2xl p-7">{children}</div>
           </div>
         </div>
       </div>
