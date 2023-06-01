@@ -2,15 +2,18 @@
 
 ## About Project 
 
-<p align="center">Projek ini dibuat dari sisi Frontend saja dengan library ReactJS tanpa menggunakan sisi dari Backend. Project ini dapat melakukan delivery pesanan dengan mengisi form, dan dapat memilih sebagai dropshipper atau tidak. Selanjutnya dapat memlih shipping method dan payment method. Kemudian dapat mengenerate OrderID pesanan kita</p>
+<p align="center">Projek ini dibuat dari sisi Frontend saja dengan library ReactJS tanpa menggunakan sisi dari Backend. Project ini dapat melakukan delivery pesanan dengan mengisi form, dan dapat memilih sebagai dropshipper atau tidak. Selanjutnya dapat memlih shipping method dan payment method. Kemudian dapat mengenerate OrderID pesanan kita.</p>
+
+> **Note:** Masih terdapat bug pada payment page menggunakan link demo, shipping dan payment method tidak mau berubah warna ketika diklik.
 
 ## Deployment
 
-Link Demo: 
+Link Demo: https://jakmall-techtest.vercel.app/
 
 ## Feature
 
-- validasi form
+- Responsive design
+- Validasi form
 - Shipping & payment method
 - Generate OrderID
 
