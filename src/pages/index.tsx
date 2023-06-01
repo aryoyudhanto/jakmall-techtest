@@ -1,9 +1,11 @@
 import _React from "react";
+import { useNavigate } from "react-router-dom";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
 import Layout from "../components/Layout";
 
 const index = () => {
+  const navigate = useNavigate();
   return (
     <Layout
       number1="bg-[#FF8A00] text-white "
@@ -26,6 +28,7 @@ const index = () => {
                   <input
                     type="checkbox"
                     className="checkbox checkbox-success"
+                    checked
                   />
                   <span className="label-text mx-2 capitalize">
                     send as dropshipper
@@ -36,7 +39,7 @@ const index = () => {
           </div>
           <form>
             <div className="flex w-full my-5">
-              <div className="w-2/3 mx-5">
+              <div className="w-2/3 mr-5">
                 <input
                   type="text"
                   className="input input-bordered mb-2 w-full"
@@ -86,7 +89,12 @@ const index = () => {
             <p className="text-2xl font-bold text-[#FF8A00]">505,900</p>
           </div>
           <div className="flex justify-center px-5">
-            <button className="btn bg-[#FF8A00] w-full border-none hover:bg-orange-600 hover:scale-95">Continue to Payment</button>
+            <button
+              className="btn bg-[#FF8A00] w-full border-none hover:bg-orange-600 hover:scale-95 normal-case text-lg"
+              onClick={() => navigate("/payment")}
+            >
+              Continue to Payment
+            </button>
           </div>
         </div>
       </div>

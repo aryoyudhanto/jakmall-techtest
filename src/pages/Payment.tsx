@@ -1,8 +1,8 @@
 import _React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
 import Layout from "../components/Layout";
-import { Link } from "react-router-dom";
 
 const Payment = () => {
   const [colorShip1, setColorShip1] = useState<string>("");
@@ -16,7 +16,8 @@ const Payment = () => {
   const [shipMet, setShipMet] = useState<string>("");
   const [shipCost, setShipCost] = useState<number>();
   const [shipEst, setShipEst] = useState<string>("");
-  const [pay, setPay] = useState<string>("")
+  const [pay, setPay] = useState<string>("");
+  const navigate = useNavigate();
 
   function toogleShip1() {
     if (colorShip1 === ``) {
@@ -99,46 +100,55 @@ const Payment = () => {
   function tooglePay1() {
     if (colorPay1 === ``) {
       setColorPay1("[#1BD97B]");
-      setPay("e-Wallet")
+      setPay("e-Wallet");
     }
     if (colorPay1 === `[#1BD97B]`) {
       setColorPay1("");
+      setPay("");
     }
     if (colorPay2 === `[#1BD97B]`) {
       setColorPay2("");
+      setPay("");
     }
     if (colorPay3 === `[#1BD97B]`) {
       setColorPay3("");
+      setPay("");
     }
   }
   function tooglePay2() {
     if (colorPay1 === `[#1BD97B]`) {
       setColorPay1("");
+      setPay("");
     }
     if (colorPay2 === ``) {
       setColorPay2("[#1BD97B]");
-      setPay("Bank Transfer")
+      setPay("Bank Transfer");
     }
     if (colorPay2 === `[#1BD97B]`) {
       setColorPay2("");
+      setPay("");
     }
     if (colorPay3 === `[#1BD97B]`) {
       setColorPay3("");
+      setPay("");
     }
   }
   function tooglePay3() {
     if (colorPay1 === `[#1BD97B]`) {
       setColorPay1("");
+      setPay("");
     }
     if (colorPay2 === `[#1BD97B]`) {
       setColorPay2("");
+      setPay("");
     }
     if (colorPay3 === ``) {
       setColorPay3("[#1BD97B]");
-      setPay("Virtual account")
+      setPay("Virtual account");
     }
     if (colorPay3 === `[#1BD97B]`) {
       setColorPay3("");
+      setPay("");
     }
   }
 
@@ -243,10 +253,17 @@ const Payment = () => {
           </div>
           <div className="flex justify-between px-5 my-5">
             <p className="text-2xl font-bold text-[#FF8A00]">Total</p>
-            <p className="text-2xl font-bold text-[#FF8A00]">{shipCost? (500000+5900+shipCost).toLocaleString() : "505,900"}</p>
+            <p className="text-2xl font-bold text-[#FF8A00]">
+              {shipCost
+                ? (500000 + 5900 + shipCost).toLocaleString()
+                : "505,900"}
+            </p>
           </div>
           <div className="flex justify-center px-5">
-            <button className="btn bg-[#FF8A00] w-full border-none hover:bg-orange-600 hover:scale-95 normal-case text-lg">
+            <button
+              className="btn bg-[#FF8A00] w-full border-none hover:bg-orange-600 hover:scale-95 normal-case text-lg"
+              onClick={() => navigate("/payment+success")}
+            >
               Pay with {pay}
             </button>
           </div>

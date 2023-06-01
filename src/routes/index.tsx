@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Home from "../pages";
 import Payment from "../pages/Payment";
+import PaymentSuccess from "../pages/PaymentSuccess";
 
 const router = createBrowserRouter([
   {
@@ -11,6 +12,10 @@ const router = createBrowserRouter([
   {
     path: "/payment",
     element: <Payment />,
+  },
+  {
+    path: "/payment+success",
+    element: <PaymentSuccess />,
   },
 ]);
 
