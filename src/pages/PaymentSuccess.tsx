@@ -1,10 +1,30 @@
-import _React from "react";
-import { Link } from "react-router-dom";
+import _React, { useState, useEffect } from "react";
 import { AiOutlineArrowLeft } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 import Layout from "../components/Layout";
 
 const PaymentSuccess = () => {
+    const [orderId, setOrderId] = useState<string>("")
+
+    useEffect(() => {
+        randomOrderID()
+    }, [])    
+
+    function randomOrderID(){
+        const char = '23456789ABCDEFGHJKLMNPQRSTUVWXYZ'; 
+        const length = 5; 
+        let code = '';
+      
+        for (let i = 0; i < length; i++) {
+          const randomIndex = Math.floor(Math.random() * char.length);
+          const randomChar = char.charAt(randomIndex);
+          code += randomChar;
+        }
+      
+        setOrderId(code)
+      }
+
   return (
     <Layout
       number1="bg-[#FF8A00] text-white "
@@ -15,7 +35,7 @@ const PaymentSuccess = () => {
         <div className="flex w-2/3 mx-5 justify-center items-center">
           <div className="my-5">
             <p className="text-5xl font-bold text-[#FF8A00]">Thank you</p>
-            <p className="mt-12 font-semibold">Order ID: awdawdxa</p>
+            <p className="mt-12 font-semibold">Order ID: {orderId}</p>
             <p className="mt-1">
               Your order wil be delivered today with GO-SEND
             </p>
