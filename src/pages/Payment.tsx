@@ -27,29 +27,18 @@ const Payment = () => {
     }
     if (colorShip1 === `[#1BD97B]`) {
       setColorShip1("");
-      setShipMet("");
-      setShipCost(0);
-      setShipEst("");
     }
     if (colorShip2 === `[#1BD97B]`) {
       setColorShip2("");
       setShipMet("");
-      setShipCost(0);
-      setShipEst("");
     }
     if (colorShip3 === `[#1BD97B]`) {
       setColorShip3("");
-      setShipMet("");
-      setShipCost(0);
-      setShipEst("");
     }
   }
   function toogleShip2() {
     if (colorShip1 === `[#1BD97B]`) {
       setColorShip1("");
-      setShipMet("");
-      setShipCost(0);
-      setShipEst("");
     }
     if (colorShip2 === ``) {
       setColorShip2("[#1BD97B]");
@@ -59,29 +48,17 @@ const Payment = () => {
     }
     if (colorShip2 === `[#1BD97B]`) {
       setColorShip2("");
-      setShipMet("");
-      setShipCost(0);
-      setShipEst("");
     }
     if (colorShip3 === `[#1BD97B]`) {
       setColorShip3("");
-      setShipMet("");
-      setShipCost(0);
-      setShipEst("");
     }
   }
   function toogleShip3() {
     if (colorShip1 === `[#1BD97B]`) {
       setColorShip1("");
-      setShipMet("");
-      setShipCost(0);
-      setShipEst("");
     }
     if (colorShip2 === `[#1BD97B]`) {
       setColorShip2("");
-      setShipMet("");
-      setShipCost(0);
-      setShipEst("");
     }
     if (colorShip3 === ``) {
       setColorShip3("[#1BD97B]");
@@ -91,9 +68,6 @@ const Payment = () => {
     }
     if (colorShip3 === `[#1BD97B]`) {
       setColorShip3("");
-      setShipMet("");
-      setShipCost(0);
-      setShipEst("");
     }
   }
   function tooglePay1() {
