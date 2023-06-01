@@ -153,6 +153,7 @@ const index = () => {
               </div>
             </div>
           </div>
+          <hr className="md:hidden border border-[#FF8A00]"/>
           <div className="w-full md:w-1/3 bg-white md:border-l-2 md:border-[#FF8A00]">
             <p className="text-2xl md:text-3xl my-3 font-bold text-[#FF8A00] px-0 md:px-5">
               Summary
