@@ -19,12 +19,10 @@ const index = () => {
     handleSubmit,
     formState: { errors },
     watch,
-  } = useForm<FormValues>();
-  const dropshipperPhoneNumber = watch("dropshipperPhoneNumber")  
+  } = useForm<FormValues>(); 
   const [isDisabled, setIsDisabled] = useState<boolean>(true);
-  const [dropFee, setDropFee] = useState<string>("");
   const deliveryAddress = watch("deliveryAddress", "");
-  const dropshipperName = watch("dropshipperName")
+  const [dropFee, setDropFee] = useState<string>("");
   const phone = watch("phoneNumber");
   const navigate = useNavigate();
   const email = watch("email")
@@ -50,35 +48,35 @@ const index = () => {
       number2="bg-[#FFE4B8] text-[#FF8A00] "
       number3="bg-[#FFE4B8] text-[#FF8A00] "
     >
-      <div className="text-black flex items-center mx-5">
-        <AiOutlineArrowLeft size={15} />
+      <div className="text-black flex items-center my-8 mx-2 md:my-0 md:mx-5 text-xs md:text-base">
+        <AiOutlineArrowLeft />
         <p className="ml-2 hover:scale-105 transition">Back to chart</p>
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="flex w-full my-5">
-          <div className="w-2/3 mx-5">
-            <div className="flex justify-between">
-              <p className="text-5xl font-bold text-[#FF8A00]">
+        <div className="md:flex w-full my-0 md:my-5">
+          <div className="w-full md:w-2/3 md:mx-5">
+            <div className="md:flex md:justify-between">
+              <p className="text-3xl md:text-5xl font-bold text-[#FF8A00]">
                 Delivery details
               </p>
-              <div className="items-center my-3">
+              <div className="items-center my-1 md:my-3">
                 <div className="form-control">
-                  <label className="cursor-pointer label">
+                  <label className="cursor-pointer md:label">
                     <input
                       type="checkbox"
-                      className="checkbox checkbox-success"
+                      className="w-[0.7rem] h-[0.7rem] md:checkbox md:checkbox-success"
                       onChange={() => toogleDrop()}
                       onClick={() => toogleDrop()}
                     />
-                    <span className="label-text mx-2 capitalize">
-                      send as dropshipper
+                    <span className="label-text mx-1 md:mx-2 text-[11px] md:text-base">
+                      Send as dropshipper
                     </span>
                   </label>
                 </div>
               </div>
             </div>
-            <div className="flex w-full my-5">
-              <div className="w-2/3 mr-5">
+            <div className="md:flex w-full my-5">
+              <div className="w-full md:w-2/3 mx-0 md:mr-5">
                 <input
                   type="text"
                   className={`input mb-2 w-full ${
@@ -133,64 +131,52 @@ const index = () => {
                     },
                   })}
                 />
-                <span className="text-xs">
+                <span className="text-[10px] md:text-xs">
                   {120 - deliveryAddress.length} characters remaining
                 </span>
               </div>
-              <div className="w-1/3">
+              <div className="w-full md:w-1/3 my-5 md:my-0">
                 <input
                   disabled={isDisabled}
                   type="text"
-                  className={`input input-bordered mb-2 w-full ${
-                    errors.dropshipperName
-                      ? "input-error"
-                      : dropshipperName
-                      ? "input-success"
-                      : "input-bordered"
-                  }`}
+                  className={`input input-bordered mb-2 w-full`}
                   placeholder="Dropshipper Name"
                   {...register("dropshipperName", { required: false })}
                 />
                 <input
                   disabled={isDisabled}
                   type="text"
-                  className={`input input-bordered mb-2 w-full ${
-                    errors.dropshipperPhoneNumber
-                      ? "input-error"
-                      : dropshipperPhoneNumber
-                      ? "input-success"
-                      : "input-bordered"
-                  }`}
+                  className={`input input-bordered mb-2 w-full`}
                   placeholder="Dropshipper Phone Number"
                   {...register("dropshipperPhoneNumber", { required: false })}
                 />
               </div>
             </div>
           </div>
-          <div className="w-1/3 bg-white border-l-2 border-[#FF8A00]">
-            <p className="text-3xl my-3 font-bold text-[#FF8A00] px-5">
+          <div className="w-full md:w-1/3 bg-white md:border-l-2 md:border-[#FF8A00]">
+            <p className="text-2xl md:text-3xl my-3 font-bold text-[#FF8A00] px-0 md:px-5">
               Summary
             </p>
-            <div className="w-full h-56 px-5">
-              <p className="text-black">10 items purchased</p>
+            <div className="w-full h-48 md:h-56 px-0 md:px-5">
+              <p className="text-black text-xs md:text-base">10 items purchased</p>
             </div>
-            <div className="flex justify-between px-5">
+            <div className="flex justify-between px-0 md:px-5">
               <p className="text-sm font-normal">Cost of goods</p>
-              <p className="text-lg font-bold">500,000</p>
+              <p className="text-base md:text-lg font-bold">500,000</p>
             </div>
             {dropFee !== "" ? (
-              <div className="flex justify-between px-5">
+              <div className="flex justify-between px-0 md:px-5">
                 <p className="text-sm font-normal">Dropshipping Fee</p>
-                <p className="text-lg font-bold">5,900</p>
+                <p className="text-base md:text-lg font-bold">5,900</p>
               </div>
             ) : null}
-            <div className="flex justify-between px-5 my-5">
+            <div className="flex justify-between px-0 md:px-5 my-2 md:my-5">
               <p className="text-2xl font-bold text-[#FF8A00]">Total</p>
               <p className="text-2xl font-bold text-[#FF8A00]">
                 {dropFee !== "" ? "505,900" : "500,000"}
               </p>
             </div>
-            <div className="flex justify-center px-5">
+            <div className="flex justify-center px-0 md:px-5">
               <button
                 className="btn bg-[#FF8A00] w-full border-none hover:bg-orange-600 hover:scale-95 normal-case text-lg"
                 type="submit"
