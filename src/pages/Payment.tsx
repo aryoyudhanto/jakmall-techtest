@@ -21,24 +21,24 @@ const Payment = () => {
 
   function toogleShip1() {
     if (colorShip1 === ``) {
-      setColorShip1("[#1BD97B]");
+      setColorShip1("1BD97B");
       setShipMet("GO-SEND");
       setShipCost(15000);
       setShipEst("Today");
     }
-    if (colorShip1 === `[#1BD97B]`) {
+    if (colorShip1 === `1BD97B`) {
       setColorShip1("");
       setShipMet("");
       setShipCost(0);
       setShipEst("");
     }
-    if (colorShip2 === `[#1BD97B]`) {
+    if (colorShip2 === `1BD97B`) {
       setColorShip2("");
       setShipMet("");
       setShipCost(0);
       setShipEst("");
     }
-    if (colorShip3 === `[#1BD97B]`) {
+    if (colorShip3 === `1BD97B`) {
       setColorShip3("");
       setShipMet("");
       setShipCost(0);
@@ -46,25 +46,25 @@ const Payment = () => {
     }
   }
   function toogleShip2() {
-    if (colorShip1 === `[#1BD97B]`) {
+    if (colorShip1 === `1BD97B`) {
       setColorShip1("");
       setShipMet("");
       setShipCost(0);
       setShipEst("");
     }
     if (colorShip2 === ``) {
-      setColorShip2("[#1BD97B]");
+      setColorShip2("1BD97B");
       setShipMet("JNE");
       setShipCost(9000);
       setShipEst("2 day");
     }
-    if (colorShip2 === `[#1BD97B]`) {
+    if (colorShip2 === `1BD97B`) {
       setColorShip2("");
       setShipMet("");
       setShipCost(0);
       setShipEst("");
     }
-    if (colorShip3 === `[#1BD97B]`) {
+    if (colorShip3 === `1BD97B`) {
       setColorShip3("");
       setShipMet("");
       setShipCost(0);
@@ -72,25 +72,25 @@ const Payment = () => {
     }
   }
   function toogleShip3() {
-    if (colorShip1 === `[#1BD97B]`) {
+    if (colorShip1 === `1BD97B`) {
       setColorShip1("");
       setShipMet("");
       setShipCost(0);
       setShipEst("");
     }
-    if (colorShip2 === `[#1BD97B]`) {
+    if (colorShip2 === `1BD97B`) {
       setColorShip2("");
       setShipMet("");
       setShipCost(0);
       setShipEst("");
     }
     if (colorShip3 === ``) {
-      setColorShip3("[#1BD97B]");
+      setColorShip3("1BD97B");
       setShipMet("Personal Courier");
       setShipCost(29000);
       setShipEst("1 day");
     }
-    if (colorShip3 === `[#1BD97B]`) {
+    if (colorShip3 === `#1BD97B`) {
       setColorShip3("");
       setShipMet("");
       setShipCost(0);
@@ -99,54 +99,54 @@ const Payment = () => {
   }
   function tooglePay1() {
     if (colorPay1 === ``) {
-      setColorPay1("[#1BD97B]");
+      setColorPay1("1BD97B");
       setPay("e-Wallet");
     }
-    if (colorPay1 === `[#1BD97B]`) {
+    if (colorPay1 === `1BD97B`) {
       setColorPay1("");
       setPay("");
     }
-    if (colorPay2 === `[#1BD97B]`) {
+    if (colorPay2 === `1BD97B`) {
       setColorPay2("");
       setPay("");
     }
-    if (colorPay3 === `[#1BD97B]`) {
+    if (colorPay3 === `1BD97B`) {
       setColorPay3("");
       setPay("");
     }
   }
   function tooglePay2() {
-    if (colorPay1 === `[#1BD97B]`) {
+    if (colorPay1 === `1BD97B`) {
       setColorPay1("");
       setPay("");
     }
     if (colorPay2 === ``) {
-      setColorPay2("[#1BD97B]");
+      setColorPay2("1BD97B");
       setPay("Bank Transfer");
     }
-    if (colorPay2 === `[#1BD97B]`) {
+    if (colorPay2 === `1BD97B`) {
       setColorPay2("");
       setPay("");
     }
-    if (colorPay3 === `[#1BD97B]`) {
+    if (colorPay3 === `1BD97B`) {
       setColorPay3("");
       setPay("");
     }
   }
   function tooglePay3() {
-    if (colorPay1 === `[#1BD97B]`) {
+    if (colorPay1 === `1BD97B`) {
       setColorPay1("");
       setPay("");
     }
-    if (colorPay2 === `[#1BD97B]`) {
+    if (colorPay2 === `1BD97B`) {
       setColorPay2("");
       setPay("");
     }
     if (colorPay3 === ``) {
-      setColorPay3("[#1BD97B]");
+      setColorPay3("1BD97B");
       setPay("Virtual account");
     }
-    if (colorPay3 === `[#1BD97B]`) {
+    if (colorPay3 === `1BD97B`) {
       setColorPay3("");
       setPay("");
     }
@@ -169,21 +169,21 @@ const Payment = () => {
             <p className="text-3xl md:text-5xl font-bold text-[#FF8A00] montserrat">Shipment</p>
             <div className="flex justify-center md:justify-normal w-full my-8">
               <div
-                className={`w-1/3 md:w-1/4 border-2 p-2 mr-3 border-${colorShip1} bg-${colorShip1} bg-opacity-10 hover:cursor-pointer hover:scale-95 transition`}
+                className={`w-1/3 md:w-1/4 border-2 p-2 mr-3 border-[${colorShip1}] bg-[${colorShip1}] bg-opacity-10 hover:cursor-pointer hover:scale-95 transition`}
                 onClick={() => toogleShip1()}
               >
                 <p className="text-xs md:text-sm inter">GO-SEND</p>
                 <p className="text-sm font-semibold inter">15,000</p>
               </div>
               <div
-                className={`w-1/3 md:w-1/4 border-2 p-2 mr-3 border-${colorShip2} bg-${colorShip2} bg-opacity-10 hover:cursor-pointer hover:scale-95 transition`}
+                className={`w-1/3 md:w-1/4 border-2 p-2 mr-3 border-[${colorShip2}] bg-[${colorShip2}] bg-opacity-10 hover:cursor-pointer hover:scale-95 transition`}
                 onClick={() => toogleShip2()}
               >
                 <p className="text-xs md:text-sm inter">JNE</p>
                 <p className="text-sm font-semibold inter">9,000</p>
               </div>
               <div
-                className={`w-1/3 md:w-1/4 border-2 p-2 border-${colorShip3} bg-${colorShip3} bg-opacity-10 hover:cursor-pointer hover:scale-95 transition`}
+                className={`w-1/3 md:w-1/4 border-2 p-2 border-[${colorShip3}] bg-[${colorShip3}] bg-opacity-10 hover:cursor-pointer hover:scale-95 transition`}
                 onClick={() => toogleShip3()}
               >
                 <p className="text-xs md:text-sm inter">Personal Courier</p>
@@ -195,21 +195,21 @@ const Payment = () => {
             <p className="text-3xl md:text-5xl font-bold text-[#FF8A00] montserrat">Payment</p>
             <div className="flex justify-center md:justify-normal w-full my-8">
               <div
-                className={`w-1/3 md:w-1/4 border-2 p-2 mr-3 border-${colorPay1} bg-${colorPay1} bg-opacity-10 hover:cursor-pointer hover:scale-95 transition`}
+                className={`w-1/3 md:w-1/4 border-2 p-2 mr-3 border-[${colorPay1}] bg-[${colorPay1}] bg-opacity-10 hover:cursor-pointer hover:scale-95 transition`}
                 onClick={() => tooglePay1()}
               >
                 <p className="text-xs md:text-sm inter">e-Wallet</p>
                 <p className="text-xs md:text-sm font-semibold inter">1,500,000 left</p>
               </div>
               <div
-                className={`w-1/3 md:w-1/4 border-2 p-2 mr-3 border-${colorPay2} bg-${colorPay2} bg-opacity-10 hover:cursor-pointer hover:scale-95 transition`}
+                className={`w-1/3 md:w-1/4 border-2 p-2 mr-3 border-[${colorPay2}] bg-[${colorPay2}] bg-opacity-10 hover:cursor-pointer hover:scale-95 transition`}
                 onClick={() => tooglePay2()}
               >
                 <p className="text-xs md:text-sm inter">Bank Transfer</p>
                 <p className="break-words text-xs md:text-sm font-semibold inter">123-456-7890123-4</p>
               </div>
               <div
-                className={`w-1/3 md:w-1/4 border-2 p-2 border-${colorPay3} bg-${colorPay3} bg-opacity-10 hover:cursor-pointer hover:scale-95 transition`}
+                className={`w-1/3 md:w-1/4 border-2 p-2 border-[${colorPay3}] bg-[${colorPay3}] bg-opacity-10 hover:cursor-pointer hover:scale-95 transition`}
                 onClick={() => tooglePay3()}
               >
                 <p className="text-xs md:text-sm inter">Virtual accounnt</p>
