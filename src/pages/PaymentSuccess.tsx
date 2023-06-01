@@ -36,7 +36,7 @@ const PaymentSuccess = () => {
           <div className="my-7 md:my-5">
             <p className="text-3xl md:text-5xl font-bold text-[#FF8A00] montserrat">Thank you</p>
             <p className="mt-10 md:mt-12 text-sm md:text-base font-semibold inter">Order ID: {orderId}</p>
-            <p className="mt-1 text-sm md:text-base">
+            <p className="mt-1 text-sm md:text-base inter">
               Your order wil be delivered today with GO-SEND
             </p>
             <div className="text-black flex items-center mt-10 md:mt-12 text-sm md:text-base">
