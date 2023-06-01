@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import { AiOutlineRight } from "react-icons/ai";
-import React, { FC, LabelHTMLAttributes } from "react";
 import { RiNumber1, RiNumber2, RiNumber3 } from "react-icons/ri";
+import React, { FC, LabelHTMLAttributes } from "react";
+import { AiOutlineRight } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 interface LayoutProps extends LabelHTMLAttributes<HTMLParagraphElement> {
   children: React.ReactNode;
@@ -21,7 +21,7 @@ const Layout: FC<LayoutProps> = ({ children, number1, number2, number3 }) => {
                 <RiNumber1 />
               </div>
               <Link to={"/"}>
-                <p className="text-[#FF8A00] capitalize hover:scale-105 transition text-xs md:text-base">delivery</p>
+                <p className="text-[#FF8A00] capitalize hover:scale-105 transition text-xs md:text-base inter">delivery</p>
               </Link>
               <div className="text-[#FF8A00] mx-1 md:mx-2 text-xs md:text-sm">
                 <AiOutlineRight/>
@@ -29,8 +29,8 @@ const Layout: FC<LayoutProps> = ({ children, number1, number2, number3 }) => {
               <div className={`font-bold ${number2} w-5 h-5 md:w-6 md:h-6 rounded-full flex justify-center items-center mr-1 md:mr-2 text-xs md:text-sm`}>
                 <RiNumber2/>
               </div>
-              <Link to={"/"}>
-                <p className="text-[#FF8A00] capitalize hover:scale-105 transition text-xs md:text-base">payment</p>
+              <Link to={"/payment"}>
+                <p className="text-[#FF8A00] capitalize hover:scale-105 transition text-xs md:text-base inter">payment</p>
               </Link>
               <div className="text-[#FF8A00] mx-1 md:mx-2 text-xs md:text-sm">
                 <AiOutlineRight />
@@ -38,8 +38,8 @@ const Layout: FC<LayoutProps> = ({ children, number1, number2, number3 }) => {
               <div className={`font-bold ${number3} w-5 h-5 md:w-6 md:h-6 rounded-full flex justify-center items-center mr-1 md:mr-2 text-xs md:text-sm`}>
                 <RiNumber3  />
               </div>{" "}
-              <Link to={"/"}>
-                <p className="text-[#FF8A00] capitalize hover:scale-105 transition text-xs md:text-base">finish</p>
+              <Link to={"/payment+success"}>
+                <p className="text-[#FF8A00] capitalize hover:scale-105 transition text-xs md:text-base inter">finish</p>
               </Link>
             </div>
           </div>
