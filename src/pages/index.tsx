@@ -1,7 +1,7 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import _React, { useState } from "react";
+import _React, { useState, useEffect, KeyboardEvent } from "react";
 
 import Layout from "../components/Layout";
 
@@ -11,6 +11,7 @@ interface FormValues {
   deliveryAddress: string;
   dropshipperName: string;
   dropshipperPhoneNumber: string;
+  toogleDrop: boolean;
 }
 
 const index = () => {
@@ -19,6 +20,8 @@ const index = () => {
     handleSubmit,
     formState: { errors },
     watch,
+    trigger,
+    setValue,
   } = useForm<FormValues>();
   const dropshipperPhoneNumber = watch("dropshipperPhoneNumber");
   const [isDisabled, setIsDisabled] = useState<boolean>(true);
@@ -34,16 +37,70 @@ const index = () => {
     navigate("/payment");
   };
 
+  useEffect(() => {
+    fetch();
+  }, []);
+
   function toogleDrop() {
     if (isDisabled === false) {
       setIsDisabled(true);
       setDropFee("");
     }
-    if (isDisabled === true) {
+    else {
       setIsDisabled(false);
       setDropFee("5,900");
     }
   }
+  // const handleKeyboardEvent = () => {
+  //   console.log("nyala");
+  // };
+  // function keyUp() {
+  //   // const formDelivery =
+  //   //   JSON.parse(localStorage.getItem("FormDelivery") || "[]") || [];
+  //   const menu = {
+  //     email: email,
+  //     phoneNumber: phone,
+  //     deliveryAddress: deliveryAddress,
+  //     dropshipperName: dropshipperName,
+  //     dropshipperPhoneNumber: dropshipperPhoneNumber,
+  //   };
+  //   localStorage.setItem("FormDelivery", JSON.stringify(menu));
+
+  //   trigger("email")
+  //   trigger("phoneNumber")
+  //   trigger("dropshipperName")
+  //   trigger("dropshipperPhoneNumber")
+  // }
+
+  const handleKeyUp = (
+    _event: KeyboardEvent<HTMLElement>,
+    fieldName: any
+  ) => {
+    const menu = {
+      email: email,
+      phoneNumber: phone,
+      deliveryAddress: deliveryAddress,
+      dropshipperName: dropshipperName,
+      dropshipperPhoneNumber: dropshipperPhoneNumber,
+    };
+    localStorage.setItem("FormDelivery", JSON.stringify(menu));
+    trigger(fieldName);
+  };
+
+  function fetch() {
+    const formDelivey = localStorage.getItem("FormDelivery");
+    if (formDelivey) {
+      const objform: FormValues = JSON.parse(formDelivey);
+
+      setValue("email", objform.email);
+      setValue("phoneNumber", objform.phoneNumber);
+      setValue("deliveryAddress", objform.deliveryAddress);
+      setValue("dropshipperName", objform.dropshipperName);
+      setValue("dropshipperPhoneNumber", objform.dropshipperPhoneNumber);
+      // setIsDisabled(objform.toogleDrop);
+    }
+  }
+
   return (
     <Layout
       number1="bg-[#FF8A00] text-white "
@@ -80,6 +137,8 @@ const index = () => {
             <div className="md:flex w-full my-5">
               <div className="w-full md:w-2/3 mx-0 md:mr-5">
                 <input
+                  // onKeyUp={handleKeyUp}
+                  onKeyUp={(event) => handleKeyUp(event, "email")}
                   type="text"
                   className={`input mb-2 w-full font-semibold inter ${
                     errors.email
@@ -98,6 +157,8 @@ const index = () => {
                   })}
                 />
                 <input
+                  // onKeyUp={handleKeyUp}
+                  onKeyUp={(event) => handleKeyUp(event, "phoneNumber")}
                   type="text"
                   className={`input input-bordered mb-2 w-full font-semibold inter ${
                     errors.phoneNumber
@@ -116,6 +177,8 @@ const index = () => {
                   })}
                 />
                 <textarea
+                  // onKeyUp={keyUp}
+                  onKeyUp={(event) => handleKeyUp(event, "deliveryAddress")}
                   className={`textarea textarea-bordered w-full resize-none h-36 font-semibold inter ${
                     errors.deliveryAddress
                       ? "textarea-error"
@@ -139,6 +202,8 @@ const index = () => {
               {isDisabled === true ? (
                 <div className="w-full md:w-1/3 my-5 md:my-0">
                   <input
+                    // onKeyUp={keyUp}
+                    onKeyUp={(event) => handleKeyUp(event, "dropshipperName")}
                     disabled={isDisabled}
                     type="text"
                     className={`input input-bordered mb-2 w-full font-semibold inter`}
@@ -146,6 +211,8 @@ const index = () => {
                     {...register("dropshipperName", { required: false })}
                   />
                   <input
+                    // onKeyUp={keyUp}
+                    onKeyUp={(event) => handleKeyUp(event, "dropshipperName")}
                     disabled={isDisabled}
                     type="text"
                     className={`input input-bordered mb-2 w-full font-semibold inter`}
@@ -156,6 +223,8 @@ const index = () => {
               ) : (
                 <div className="w-full md:w-1/3 my-5 md:my-0">
                   <input
+                    // onKeyUp={keyUp}
+                    onKeyUp={(event) => handleKeyUp(event, "dropshipperName")}
                     disabled={isDisabled}
                     type="text"
                     className={`input input-bordered mb-2 w-full font-semibold inter ${
@@ -169,6 +238,10 @@ const index = () => {
                     {...register("dropshipperName", { required: true })}
                   />
                   <input
+                    // onKeyUp={keyUp}
+                    onKeyUp={(event) =>
+                      handleKeyUp(event, "dropshipperPhoneNumber")
+                    }
                     disabled={isDisabled}
                     type="text"
                     className={`input input-bordered mb-2 w-full font-semibold inter ${
@@ -212,7 +285,9 @@ const index = () => {
               </div>
             ) : null}
             <div className="flex justify-between px-0 md:px-5 my-2 md:my-5">
-              <p className="text-2xl font-bold text-[#FF8A00] montserrat">Total</p>
+              <p className="text-2xl font-bold text-[#FF8A00] montserrat">
+                Total
+              </p>
               <p className="text-2xl font-bold text-[#FF8A00] montserrat">
                 {dropFee !== "" ? "505,900" : "500,000"}
               </p>
